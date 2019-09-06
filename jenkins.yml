@@ -56,7 +56,7 @@
 
    - name: Copy file envirometn maven
      copy:
-       src: /home/ec2-user/ansible/maven.sh
+       src: /opt/jenkins_wildfly
        dest: /etc/profile.d/
        mode: u+x
        remote_src: no
