@@ -3,67 +3,71 @@
    become: yes
 
    tasks:
-   - name: Install JDK1.8
-     yum:
-       name: java-1.8.0
-       state: present
+#   - name: Install JDK1.8
+#     yum:
+#       name: java-1.8.0
+#       state: present
   
    - name: Install JDK1.8 DEV
      yum:
-       name: java-1.8.0-openjdk-devel.x86_64
-       state: present
+      name: java-1.8.0-openjdk-devel.x86_64
+      state: present
 
-   - name: Download repository
-     get_url: 
-       url: http://pkg.jenkins-ci.org/redhat/jenkins.repo 
-       dest: /etc/yum.repos.d/
-
-   - name: Install repository jenkins
-     rpm_key:
-       state: present
-       key: http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
-  
-   - name: upgrade all packages
-     yum:
-       name: '*'
-       state: latest
-
-   - name: Install jenkins
-     yum:
-       name: jenkins
-       state: present
-
-   - name: Start Service
-     service:
-       name: jenkins
-       state: started
-    
-   - name: Install Git
-     yum:
-       name: git
-       state: present
-
-   - name: Download Maven 3.6
-     get_url:
-       url: https://www-us.apache.org/dist/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz 
-       dest: /tmp/
-     
-   - name: Extract package maven 3.6
-     unarchive: 
-       src: /tmp/apache-maven-3.6.1-bin.tar.gz
-       dest: /opt/
-       remote_src: yes
-
-   - name: Copy file envirometn maven
-     copy:
-       src: /opt/jenkins_wildfly
-       dest: /etc/profile.d/
-       mode: u+x
-       remote_src: no
-
-   - name: Create link to executable mvn to Maven 3.6
-     file:
-       src: /opt/apache-maven-3.6.1/bin/mvn
-       dest: /bin/mvn
-       state: link
-       remote_src: no
+#   - name: Download repository
+#     get_url: 
+#       url: http://pkg.jenkins-ci.org/redhat/jenkins.repo 
+#       dest: /etc/yum.repos.d/
+#
+#   - name: Install repository jenkins
+#     rpm_key:
+#       state: present
+#       key: http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
+#  
+#   - name: upgrade all packages
+#     yum:
+#       name: '*'
+#       state: latest
+#
+#   - name: Install jenkins
+#     yum:
+#       name: jenkins
+#       state: present
+#
+#   - name: Start Service
+#     service:
+#       name: jenkins
+#       state: started
+#
+#   - name: Save the password default administrator jenkins
+#     shell: cat /var/lib/jenkins/secrets/initialAdminPassword
+#     register: defaultpwd
+#
+#   - name: Install Git
+#     yum:
+#       name: git
+#       state: present
+#
+#   - name: Download Maven 3.6
+#     get_url:
+#       url: https://www-us.apache.org/dist/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz 
+#       dest: /tmp/
+#     
+#   - name: Extract package maven 3.6
+#     unarchive: 
+#       src: /tmp/apache-maven-3.6.1-bin.tar.gz
+#       dest: /opt/
+#       remote_src: yes
+#
+#   - name: Copy file envirometn maven
+#     copy:
+#       src: /opt/jenkins_wildfly
+#       dest: /etc/profile.d/
+#       mode: u+x
+#       remote_src: no
+#
+#   - name: Create link to executable mvn to Maven 3.6
+#     file:
+#       src: /opt/apache-maven-3.6.1/bin/mvn
+#       dest: /bin/mvn
+#       state: link
+#       remote_src: no
