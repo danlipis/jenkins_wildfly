@@ -23,19 +23,19 @@
        src: /opt/wildfly-10.0.0.Final.zip 
        dest: /opt
        remote_src: yes
-#
-#   - name: Add the user 'wildfly' to run application server 
-#     user:
-#       name: wildfly
-#       comment: Application User Wildfly
-#       shell: /bin/bash 
-#
-#   - name: Change folder, file, owership, group and permission
-#     file:
-#       path: /opt/wildfly*
-#       owner: wildfly
-#       group: wildfly
-#       recurse: yes
+
+   - name: Add the user 'wildfly' to run application server 
+     user:
+       name: wildfly
+       comment: Application User Wildfly
+       shell: /bin/bash 
+
+   - name: Change folder, file, owership, group and permission
+     file:
+       path: /opt/wildfly*
+       owner: wildfly
+       group: wildfly
+       recurse: yes
 #
 #   - name: Bind to listen all interface
 #     shell: sed -i s/127.0.0.1/0.0.0.0/g /opt/wildfly-10.0.0.Final/standalone/configuration/standalone-ha.xml
