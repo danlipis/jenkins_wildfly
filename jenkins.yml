@@ -37,10 +37,10 @@
      shell: cat /var/lib/jenkins/secrets/initialAdminPassword
      register: defaultpwd
 
-#   - name: Install Git
-#     yum:
-#       name: git
-#       state: present
+   - name: Install Git
+     yum:
+       name: git
+       state: present
 #
 #   - name: Download Maven 3.6
 #     get_url:
