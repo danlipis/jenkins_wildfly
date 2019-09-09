@@ -43,12 +43,11 @@
        path: /opt/wildfly-10.0.0.Final/standalone/configuration/standalone-ha.xml
        regexp: '127.0.0.1'
        replace: '0.0.0.0' 
-#     shell: sed -i s/127.0.0.1/0.0.0.0/g /opt/wildfly-10.0.0.Final/standalone/configuration/standalone-ha.xml
 
-#   - name: Start Widlfy port 8180
-#     shell: cd /opt/wildfly-10.0.0.Final/bin; nohup /bin/sh standalone.sh -c standalone-ha.xml -Djboss.socket.binding.port-offset=100 & 
-#     become: yes
-#     become_user: wildfly
+   - name: Start Widlfy port 8180
+     shell: cd /opt/wildfly-10.0.0.Final/bin; nohup /bin/sh standalone.sh -c standalone-ha.xml -Djboss.socket.binding.port-offset=100 & 
+     become: yes
+     become_user: wildfly
 
 #   - name: Add user management console
 #     shell: cd /opt/wildfly-10.0.0.Final/bin; ./add-user.sh wild lalala
