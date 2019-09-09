@@ -17,21 +17,21 @@
      rpm_key:
        state: present
        key: http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
-#  
-#   - name: upgrade all packages
-#     yum:
-#       name: '*'
-#       state: latest
-#
-#   - name: Install jenkins
-#     yum:
-#       name: jenkins
-#       state: present
-#
-#   - name: Start Service
-#     service:
-#       name: jenkins
-#       state: started
+  
+   - name: upgrade all packages
+     yum:
+       name: '*'
+       state: latest
+
+   - name: Install jenkins
+     yum:
+       name: jenkins
+       state: present
+
+   - name: Start Service
+     service:
+       name: jenkins
+       state: started
 #
 #   - name: Save the password default administrator jenkins
 #     shell: cat /var/lib/jenkins/secrets/initialAdminPassword
