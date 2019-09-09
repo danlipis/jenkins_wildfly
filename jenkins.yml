@@ -41,17 +41,17 @@
      yum:
        name: git
        state: present
-#
-#   - name: Download Maven 3.6
-#     get_url:
-#       url: https://www-us.apache.org/dist/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz 
-#       dest: /tmp/
-#     
-#   - name: Extract package maven 3.6
-#     unarchive: 
-#       src: /tmp/apache-maven-3.6.1-bin.tar.gz
-#       dest: /opt/
-#       remote_src: yes
+
+   - name: Download Maven 3.6
+     get_url:
+       url: https://www-us.apache.org/dist/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz 
+       dest: /tmp/
+     
+   - name: Extract package maven 3.6
+     unarchive: 
+       src: /tmp/apache-maven-3.6.1-bin.tar.gz
+       dest: /opt/
+       remote_src: yes
 #
 #   - name: Copy file envirometn maven
 #     copy:
