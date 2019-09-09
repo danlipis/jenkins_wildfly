@@ -3,25 +3,20 @@
    become: yes
 
    tasks:
-#   - name: Install JDK1.8
-#     yum:
-#       name: java-1.8.0
-#       state: present
-  
    - name: Install JDK1.8 DEV
      yum:
       name: java-1.8.0-openjdk-devel.x86_64
       state: present
 
-#   - name: Download repository
-#     get_url: 
-#       url: http://pkg.jenkins-ci.org/redhat/jenkins.repo 
-#       dest: /etc/yum.repos.d/
-#
-#   - name: Install repository jenkins
-#     rpm_key:
-#       state: present
-#       key: http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
+   - name: Download repository
+     get_url: 
+       url: http://pkg.jenkins-ci.org/redhat/jenkins.repo 
+       dest: /etc/yum.repos.d/
+
+   - name: Install repository jenkins
+     rpm_key:
+       state: present
+       key: http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
 #  
 #   - name: upgrade all packages
 #     yum:
