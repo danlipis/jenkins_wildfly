@@ -2,7 +2,7 @@
 ec2-3-87-51-55.compute-1.amazonaws.com ansible_ssh_user=ec2-user ansible_ssh_private_key_file=keyvirginia.pem
 
 [jenkins]
-ec2-54-226-64-15.compute-1.amazonaws.com ansible_ssh_user=ec2-user ansible_ssh_private_key_file=keyvirginia.pem
+ec2-54-224-149-246.compute-1.amazonaws.com ansible_ssh_user=ec2-user ansible_ssh_private_key_file=keyvirginia.pem
 
 [wildfly]
-ec2-54-89-192-210.compute-1.amazonaws.com ansible_ssh_user=ec2-user ansible_ssh_private_key_file=keyvirginia.pem
+ec2-35-175-147-165.compute-1.amazonaws.com ansible_ssh_user=ec2-user ansible_ssh_private_key_file=keyvirginia.pem
