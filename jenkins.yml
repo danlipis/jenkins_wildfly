@@ -59,10 +59,10 @@
        dest: /etc/profile.d/
        mode: u+x
        remote_src: no
-#
-#   - name: Create link to executable mvn to Maven 3.6
-#     file:
-#       src: /opt/apache-maven-3.6.1/bin/mvn
-#       dest: /bin/mvn
-#       state: link
-#       remote_src: no
+
+   - name: Create link to executable mvn to Maven 3.6
+     file:
+       src: /opt/apache-maven-3.6.1/bin/mvn
+       dest: /bin/mvn
+       state: link
+       remote_src: no
