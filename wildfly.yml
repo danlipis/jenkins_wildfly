@@ -39,7 +39,11 @@
        recurse: yes
 
    - name: Bind to listen all interface
-     shell: sed -i s/127.0.0.1/0.0.0.0/g /opt/wildfly-10.0.0.Final/standalone/configuration/standalone-ha.xml
+     replace:
+       path: /opt/wildfly-10.0.0.Final/standalone/configuration/standalone-ha.xml
+       regexp: '127.0.0.1'
+       replace: '0.0.0.0' 
+#     shell: sed -i s/127.0.0.1/0.0.0.0/g /opt/wildfly-10.0.0.Final/standalone/configuration/standalone-ha.xml
 
 #   - name: Start Widlfy port 8180
 #     shell: cd /opt/wildfly-10.0.0.Final/bin; nohup /bin/sh standalone.sh -c standalone-ha.xml -Djboss.socket.binding.port-offset=100 & 
