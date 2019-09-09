@@ -49,6 +49,6 @@
      become: yes
      become_user: wildfly
 
-#   - name: Add user management console
-#     shell: cd /opt/wildfly-10.0.0.Final/bin; ./add-user.sh wild lalala
+   - name: Add user management console
+     shell: cd /opt/wildfly-10.0.0.Final/bin; ./add-user.sh wild lalala
 
