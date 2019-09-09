@@ -32,11 +32,11 @@
      service:
        name: jenkins
        state: started
-#
-#   - name: Save the password default administrator jenkins
-#     shell: cat /var/lib/jenkins/secrets/initialAdminPassword
-#     register: defaultpwd
-#
+
+   - name: Save the password default administrator jenkins
+     shell: cat /var/lib/jenkins/secrets/initialAdminPassword
+     register: defaultpwd
+
 #   - name: Install Git
 #     yum:
 #       name: git
